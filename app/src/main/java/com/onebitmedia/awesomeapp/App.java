@@ -5,6 +5,9 @@ import android.content.Context;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.picasso.OkHttpDownloader;
+import com.squareup.picasso.Picasso;
 
 import timber.log.Timber;
 
@@ -46,5 +49,9 @@ public class App extends Application {
 
     private void initImageLoader() {
         //TODO [template] add image loader initialization (e.g. Picasso, Glide, etc)
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Picasso.setSingletonInstance(new Picasso.Builder(this)
+            .downloader(new OkHttpDownloader(okHttpClient))
+            .build());
     }
 }
