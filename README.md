@@ -2,15 +2,15 @@
 
 Onebit Android Project Template
 
-## Included Stuffs
+## Included stuffs
 
 ### EditorConfig
 
 No more tab vs space debate, it's enforced by configuration. The configuration is stored in `.editorconfig` on the project root. Newest Android Studio already have native support for EditorConfig. 
 
-### App icon with flavor and version info
+### Logging
 
-Only enabled on debug builds. This feature is provided by [Icon Version plugin](https://github.com/akonior/icon-version).
+Use `Timber.d(message)` instead of `Log.d(TAG, message)`. It's automatically tagged and has similar style with `String.format()`
 
 ### Report the number of method references in your APK on every build.
 
@@ -26,3 +26,9 @@ To do all checks, run:
 ./gradlew check
 ```
 
+## Other libraries
+
+* Butterknife
+* OkHttp
+* Picasso
+* LeakCanary
