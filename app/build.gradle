@@ -1,4 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.noveogroup.android.check'
+apply plugin: 'icon-version'
+apply plugin: 'com.getkeepsafe.dexcount'
+
+def version = [major: 0, minor: 1, patch: 0] // see: http://semver.org/
+def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
 
 android {
     compileSdkVersion 22
@@ -8,15 +15,39 @@ android {
         applicationId "com.onebitmedia.awesomeapp"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode version.major * 10000 + version.minor * 1000 + version.patch * 100
+        versionName "${version.major}.${version.minor}.${version.patch}"
+        buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+        buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
     }
+
     buildTypes {
+        debug {
+            versionNameSuffix '-debug'
+        }
+
         release {
-            minifyEnabled false
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        staging {
+        }
+
+        production {
+        }
+    }
+
+}
+
+check {
+    abortOnError true
+    checkstyle { config hard() }
+    pmd { config easy() }
 }
 
 dependencies {
