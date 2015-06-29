@@ -7,5 +7,5 @@ import android.support.v7.app.AppCompatActivity;
  * For other specific purpose, please extend this class with a meaningful name.
  * (e.g. AuthenticatedActivity for activities that need logged-in user)
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
 }

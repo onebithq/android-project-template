@@ -1,5 +1,8 @@
 # Android Project Template
 
+![Travis CI build status](https://img.shields.io/travis/onebithq/android-project-template/master.svg?label=master)
+![Travis CI build status](https://img.shields.io/travis/onebithq/android-project-template/skeleton.svg?label=skeleton)
+
 Android Project Template used in [Onebit](http://onebitmedia.com). There are two templates in this repository. One in `master` branch is the **full-featured and use opinionated stacks**, while the `skeleton` branch contains a **vanilla template** that allow more freedom and can be easily used in any projects.
 
 ## Goals
