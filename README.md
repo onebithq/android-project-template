@@ -1,5 +1,8 @@
 # Android Project Template
 
+Master: ![Shippable build status](https://img.shields.io/shippable/5590ad61edd7f2c05243c73e/master.svg)
+Skeleton: ![Shippable build status](https://img.shields.io/shippable/5590ad61edd7f2c05243c73e/skeleton.svg)
+
 Android Project Template used in [Onebit](http://onebitmedia.com). There are two templates in this repository. One in `master` branch is the **full-featured and use opinionated stacks**, while the `skeleton` branch contains a **vanilla template** that allow more freedom and can be easily used in any projects.
 
 ## Goals
