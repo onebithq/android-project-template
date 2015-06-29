@@ -12,7 +12,7 @@ before_script:
     - mkdir -p shippable/testresults
 
 script:
-    - ./gradlew check
+    - ./gradlew test check
 
 after_script:
     - cp -r build/test-results/* shippable/testresults
